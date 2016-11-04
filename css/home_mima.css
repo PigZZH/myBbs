@@ -1,0 +1,95 @@
+.main {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.left {
+    width: 138px;
+    height: 400px;
+    float: left;
+    margin-top: 5px;
+    background-color: #e8f0f7;
+    border: 1px solid #ccc;
+}
+
+.leftOne {
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-bottom: 1px dotted gray;
+    font-weight: bold;
+}
+
+.leftTwo {
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    border-bottom: 1px dotted gray;
+
+}
+
+.leftThree {
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    border-bottom: 1px dotted gray;
+}
+
+.leftFour {
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+
+    border-bottom: 1px dotted gray;
+}
+
+.leftFive {
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    background-color: white;
+    border-bottom: 1px dotted gray;
+}
+
+.right {
+    width: 808px;
+    height: 400px;
+    float: left;
+    border: 1px solid gray;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+.rightOne {
+    width: 810px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.rightTwo {
+    width: 810px;
+    height: 300px;
+}
+
+.ipt {
+    width: 810px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 300px;
+}
+
+
+
+
+
+
+

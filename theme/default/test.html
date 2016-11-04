@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$title}</title>
+</head>
+<body>
+
+<!--{if $if==$content}-->
+{$content}
+<!--{else}-->
+{$content}
+<!--{/if}-->
+
+<!--{loop $array $val}-->
+<!--{loop $val $key $value}-->
+<br/>
+{$key}:{$value}<br/>
+<!--{/loop}-->
+<!--{/loop}-->
+<a href="index.php">退出</a>
+{$title}={$content}
+</body>
+</html>

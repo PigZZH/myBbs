@@ -1,0 +1,106 @@
+<!--{include head.html}-->
+
+<div id="wp" class="wp">
+    <!--蚂蚁线 star-->
+    <div id="pt" class="bm cl">
+        <div class="z">
+            <a href="index.php">论坛</a></div>
+        <div class="z"></div>
+    </div>
+    <!--蚂蚁线 end-->
+
+    <div id="ct" class="wp cl">
+        <!--1-->
+        <div id="chart" class="bm bw0 cl">
+            <div class="y">
+                <p class="chart z">
+                    帖子: <em>{$tiezishu}</em><span class="pipe">|</span>
+                    会员: <em>{$huiyuanshu}</em><span class="pipe">|</span>
+                    欢迎新会员: <em>{$newuser}</em>
+                </p>
+            </div>
+        </div>
+        <!--1-->
+        <!--板块开始-->
+        <div class="mn">
+            <div class="fl bm">
+                <!--{if $bdata}-->
+                <!--{loop $bdata $key $value}-->
+                <!--板块 start-->
+                <div class="bm bmw  cl">
+                    <div class="bm_h cl">
+                        <h2><a href="index.php?bigid={$value['bid']}">{$value['name']}<!--{$value['name']}--></a></h2>
+                    </div>
+                    <div id="category_1" class="bm_c">
+                        <table cellspacing="0" cellpadding="0" class="fl_tb">
+                            <tbody>
+                            <!--{if $data}-->
+                            <!--{loop $data $k $v}-->
+                            <!--{if $value['bid']==$v['parentid']}-->
+                            <tr>
+                                <td class="fl_icn">
+                                    <a href="list.php?classid={$v['cid']}"><img src="img/forum.gif"
+                                                                                alt="<?=$v['classname']?>"></a>
+                                </td>
+                                <td>
+                                    <h2><a href="list.php?classid={$v['cid']}"><?=$v['classname']?></a></h2>
+                                    <p class="xg2"></p>
+                                    <p>版主: <span class="xi2">{$v['banzhuid']}</span></p>
+                                </td>
+                                <td class="fl_i">
+                                    <span class="xi2"><!--{if isset($deal[$v['cid']])}-->{$deal[$v['cid']]}<!--{else}-->0
+                                        <!--{/if}--></span><span class="xg1"> /<!--{if isset($rela[$v['cid']])}-->{$rela[$v['cid']]}
+                                    <!--{else}-->0<!--{/if}--></span>
+                                </td>
+                                <td class="fl_by">
+                                    <div>
+                                        <a href="detail.php?id=${select_returnone($conn,'bbs_details','id','tid ="'.$v['cid'].'"','addtime
+                                        desc')}" class="xi2">${select_returnone($conn,'bbs_details','title','tid
+                                        ="'.$v['cid'].'"','addtime desc')}</a> <cite><span title="2016-08-26">${Lasttime(select_returnone($conn,'bbs_details','addtime','tid ="'.$v['cid'].'"','addtime desc'))}</span>
+                                        ${select_returnone($conn,'bbs_details','authorid','tid
+                                        ="'.$v['cid'].'"','addtime desc')}</cite></div>
+                                </td>
+                            </tr>
+                            <!--{/if}-->
+                            <!--{/loop}-->
+                            <!--{/if}-->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--板块 end-->
+                <!--{/loop}-->
+                <!--{/if}-->
+
+
+            </div>
+            <div class="bm lk">
+                <div id="category_lk" class="bm_c ptm">
+                    <ul class="m mbn cl">
+                        <li class="lk_logo mbm bbda cl">
+                            <img src="./img/logo_88_31.gif" border="0" alt="官方论坛">
+                            <div class="lk_content z">
+                                <h5><a href="http://www.discuz.net/" target="_blank">官方论坛</a></h5>
+                                <p>提供最新 Discuz! 产品新闻、软件下载与技术交流</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="x mbm cl">
+                        <!--{loop $ydata $key $value}-->
+                        <li><a href="{$value['link']}" target="_blank" title="{$value['name']}">{$value['name']}</a>
+                        </li>
+                        <!--{/loop}-->
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!--CONTENT end-->
+
+
+<!--{include foot.html}-->
