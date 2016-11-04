@@ -48,6 +48,7 @@
         <th>高亮</th>
         <th>置顶</th>
         <th>删除</th>
+        <th>彻底删除</th>
     </tr>
     </thead>
     <!--{loop $data $key $value}-->
@@ -61,6 +62,8 @@
         <td><!--{if $value['gaoliang']}--> <a href="disposetz.php?tid={$value['id']}&amp;gaoliang=0">取消高亮</a>
             <!--{else}--><a href="disposetz.php?tid={$value['id']}&amp;gaoliang=1">高亮</a><!--{/if}--></td>
         <td><!--{if $value['del']}--> <a href="disposetz.php?tid={$value['id']}&amp;del=0">取消删除</a><!--{else}--><a
+                href="disposetz.php?tid={$value['id']}&amp;del=1">恢复删除</a><!--{/if}--></td>
+        <td><!--{if $value['del']}--> <a href="disposetz.php?tid={$value['id']}&amp;realdel=1">彻底删除</a><!--{else}--><a
                 href="disposetz.php?tid={$value['id']}&amp;del=1">删除</a><!--{/if}--></td>
     </tr>
 

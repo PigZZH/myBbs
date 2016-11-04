@@ -19,7 +19,7 @@ $data = db_select($conn, 'bbs_details as d ,bbs_replay as r', 'r.id as rid,r.con
 //查询所有主题帖的数量
 $cdata = db_select($conn, 'bbs_replay', 'count(id) as c', 'del<>0');
 $count = $cdata[0]['c'];
-include template("admin_hfShow.html");
+include template("admin_hfrecycle.html");
 
 /*
 select star.name, goods.name from star, goods where star.gid=goods.id

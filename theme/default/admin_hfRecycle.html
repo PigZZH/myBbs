@@ -46,6 +46,7 @@
         <th>回复内容</th>
         <th>发帖人</th>
         <th>删除</th>
+        <th>彻底删除</th>
     </tr>
     </thead>
     <!--{loop $data $key $value}-->
@@ -55,7 +56,9 @@
             <pre>{$value['content']}</pre>
         </td>
         <td>{$value['uid']}</td>
-        <td><!--{if $value['del']}--> <a href="disposetz.php?rid={$value['rid']}&amp;del=0">取消删除</a><!--{else}--><a
+        <td><!--{if $value['del']}--> <a href="disposetz.php?rid={$value['rid']}&amp;del=0">恢复删除</a><!--{else}--><a
+                href="disposetz.php?rid={$value['rid']}&amp;del=1">删除</a><!--{/if}--></td>
+        <td><!--{if $value['del']}--> <a href="disposetz.php?rid={$value['rid']}&amp;realdel=1">彻底删除</a><!--{else}--><a
                 href="disposetz.php?rid={$value['rid']}&amp;del=1">删除</a><!--{/if}--></td>
     </tr>
 

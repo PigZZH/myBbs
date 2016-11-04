@@ -11,4 +11,4 @@ $data = db_select($conn, 'bbs_details', '*', 'del=1', null, setLimit($limit));
 //查询所有主题帖的数量
 $cdata = db_select($conn, 'bbs_details', 'count(id) as c', 'del=1');
 $count = $cdata[0]['c'];
-include template("admin_tzShow.html");
+include template("admin_tzRecycle.html");
