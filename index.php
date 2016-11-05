@@ -6,7 +6,7 @@
  * Time: 20:15
  */
 include 'common/common.php';
-$file = ['classname', 'replycount', 'motifcount', 'cid', 'parentid', 'banzhuid'];
+$file = ['classname', 'replycount', 'motifcount', 'cid', 'parentid', 'banzhuid','picture'];
 $files = ['bid', 'name'];
 /*判断是否指定显示母模块*/
 $title = '首页' . '-' . WEB_NAME;

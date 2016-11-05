@@ -1,4 +1,4 @@
-<?php include template("head.html"); ?>
+<?php include template("head.html");?>
 
 
 <!--REG START-->
@@ -24,7 +24,7 @@
                                                        onfocus="checkReg(&#39;5sMVeV&#39;)" name="username" class="px"
                                                        autocomplete="off" size="25" maxlength="15"></td>
                                             <td class="tipcol"><i id="tip_5sMVeV" class="p_tip" style="display: block;"><b
-                                                        style="color:red;">请输入用户名</b></i></td>
+                                                    style="color:red;">请输入用户名</b></i></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -39,7 +39,7 @@
                                                        onfocus="checkReg(&#39;FQ817D&#39;)" size="25" class="px"><br><em
                                                     id="emailmore">&nbsp;</em></td>
                                             <td class="tipcol"><i id="tip_FQ817D" class="p_tip" style="display: block;"><b
-                                                        style="color:red;">请输入正确的邮箱地址</b></i></td>
+                                                    style="color:red;">请输入正确的邮箱地址</b></i></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -56,8 +56,7 @@
                                                                                                   id="p_yzm"
                                                                                                   onclick="show(&#39;p_yzm&#39;)"
                                                                                                   style="cursor:pointer">
-                                                    <a href="javascript:;" onclick="show(&#39;p_yzm&#39;)">看不清？</a></i>
-                                            </td>
+                                                <a href="javascript:;" onclick="show(&#39;p_yzm&#39;)">看不清？</a></i></td>
                                         </tr>
                                         </tbody>
                                     </table>

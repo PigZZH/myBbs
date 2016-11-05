@@ -53,24 +53,22 @@
     </tr>
     </thead>
 
-    <?php if ($data) { ?>
-        <?php if (is_array($data)) {
-            foreach ($data AS $kye => $value) { ?>
-                <tr>
-                    <form action="admin_friendlink.php?linkid=<?php echo $value['id']; ?>&xiugai=1>" method="post">
-                        <td><input type='text' name="name" value="<?php echo $value['name']; ?>"></td>
-                        <td><input type='text' name='link' value="<?php echo $value['link']; ?>"></td>
-                        <td><input type='text' name="orderby" value="<?php echo $value['orderby']; ?>"></td>
-                        <td><input type="submit" value="修改"></td>
-                    </form>
-                    <td><a href="admin_friendlink.php?linkid=<?php echo $value['id']; ?>&delete=1">
-                            <button>删除</button>
-                        </a></td>
+    <?php if($data){?>
+    <?php if(is_array($data)){foreach($data AS $kye=>$value) { ?>
+    <tr>
+        <form action="admin_friendlink.php?linkid=<?php echo $value['id']; ?>&xiugai=1>" method="post">
+            <td><input type='text' name="name" value="<?php echo $value['name']; ?>"></td>
+            <td><input type='text' name='link' value="<?php echo $value['link']; ?>"></td>
+            <td><input type='text' name="orderby" value="<?php echo $value['orderby']; ?>"></td>
+            <td><input type="submit" value="修改"></td>
+        </form>
+        <td><a href="admin_friendlink.php?linkid=<?php echo $value['id']; ?>&delete=1">
+            <button>删除</button>
+        </a></td>
 
-                </tr>
-            <?php }
-        } ?>
-    <?php } ?>
+    </tr>
+    <?php }}?>
+    <?php }?>
     <tr>
 
     </tr>

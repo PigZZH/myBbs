@@ -71,6 +71,21 @@
 
         </tr>
     </form>
+    <tr>
+    <form action="admin_subjectQuery.php" method="post" enctype="multipart/form-data">
+        <td>
+            <img src="${str_replace('/','\\',$v['picture']);}">
+
+        </td>
+
+        <td>
+            板块图片:<input type="file" name="tx"/>
+        </td>
+        <td>
+            <input type="submit" name="pic" value="tx"/><input type="hidden" name="cid" value="{$v['cid']}"/>
+        </td>
+    </form>
+    </tr>
     <!--{/loop}-->
 
 </table>

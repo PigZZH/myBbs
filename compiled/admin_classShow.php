@@ -48,45 +48,43 @@
     </tr>
     </thead>
 
-    <?php if (is_array($biddata)) {
-        foreach ($biddata AS $key => $value) { ?>
+    <?php if(is_array($biddata)){foreach($biddata AS $key=>$value) { ?>
 
-            <form action="admin_classQuery.php" method="get">
-                <tr>
-                    <td><input type="text" name="name" value="<?php echo $value['name']; ?>"></td>
-                    <td><select>
-                            <?php if ($data) { ?>
-                                <?php if (is_array($data)) {
-                                    foreach ($data AS $k => $v) { ?>
-                                        <?php if ($value['bid'] == $v['parentid']) { ?>
-                                            <option/>&nbsp;<?php echo $v['classname']; ?></option>
-                                        <?php } ?>
-                                    <?php }
-                                } ?>
-                            <?php } ?>
-                        </select>
-                    </td>
-                    <td>
-                        <button><a href="admin_subjectShow.php?parentid=<?php echo $value['bid']; ?>">管理小板块</a></button>
-                    </td>
-                    <td>
-                        <input type="text" name="orderby" value="<?php echo $value['orderby']; ?>"><input type="hidden"
-                                                                                                          name="bid"
-                                                                                                          value="<?php echo $value['bid']; ?>"/>
-                    </td>
+    <form action="admin_classQuery.php" method="get">
+        <tr>
+            <td><input type="text" name="name" value="<?php echo $value['name']; ?>"></td>
+            <td><select>
+                <?php if($data){?>
+                <?php if(is_array($data)){foreach($data AS $k=>$v) { ?>
+                <?php if($value['bid']==$v['parentid']){?>
+                <option/>
+                &nbsp;<?php echo $v['classname']; ?></option>
+                <?php }?>
+                <?php }}?>
+                <?php }?>
+            </select>
+            </td>
+            <td>
+                <button><a href="admin_subjectShow.php?parentid=<?php echo $value['bid']; ?>">管理小板块</a></button>
+            </td>
+            <td>
+                <input type="text" name="orderby" value="<?php echo $value['orderby']; ?>"><input type="hidden" name="bid"
+                                                                                     value="<?php echo $value['bid']; ?>"/>
+            </td>
 
-                    <td>
-                        <!--<button type="submit"><a href="classUpdate.html">修改</a></button>-->
-                        <input type="submit" name="xiugai" value="修改"/>
-                    </td>
-                    <td>
-                        <a href="admin_classQuery.php?del=1&bid=<?php echo $value['bid']; ?>">删除</a>
-                    </td>
+            <td>
+                <!--<button type="submit"><a href="classUpdate.html">修改</a></button>-->
+                <input type="submit" name="xiugai" value="修改"/>
+            </td>
+            <td>
+                <a href="admin_classQuery.php?del=1&bid=<?php echo $value['bid']; ?>">删除</a>
+            </td>
 
-                </tr>
-            </form>
-        <?php }
-    } ?>
+        </tr>
+    </form>
+
+
+    <?php }}?>
 
 </table>
 

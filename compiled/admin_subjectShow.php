@@ -48,32 +48,45 @@
     </thead>
 
 
-    <?php if (is_array($data)) {
-        foreach ($data AS $key => $v) { ?>
+    <?php if(is_array($data)){foreach($data AS $key=>$v) { ?>
 
-            <form action="admin_subjectQuery.php" method="get">
-                <tr>
-                    <td><input type="text" name="name" value="<?php echo $v['classname']; ?>"></td>
+    <form action="admin_subjectQuery.php" method="get">
+        <tr>
+            <td><input type="text" name="name" value="<?php echo $v['classname']; ?>"></td>
 
-                    <td>
-                        <input type="text" name="orderby" value="<?php echo $v['orderby']; ?>">
-                    </td>
-                    <td>
-                        <input type="text" name="banzhuid" value="<?php echo $v['banzhuid']; ?>">
-                    </td>
-                    <input type="hidden" name="cid" value="<?php echo $v['cid']; ?>"/>
-                    <td>
-                        <!--<button type="submit"><a href="classUpdate.html">修改</a></button>-->
-                        <input type="submit" name="xiugai" value="修改"/>
-                    </td>
-                    <td>
-                        <a href="admin_subjectQuery.php?del=1&cid=<?php echo $v['cid']; ?>">删除</a>
-                    </td>
+            <td>
+                <input type="text" name="orderby" value="<?php echo $v['orderby']; ?>">
+            </td>
+            <td>
+                <input type="text" name="banzhuid" value="<?php echo $v['banzhuid']; ?>">
+            </td>
+            <input type="hidden" name="cid" value="<?php echo $v['cid']; ?>"/>
+            <td>
+                <!--<button type="submit"><a href="classUpdate.html">修改</a></button>-->
+                <input type="submit" name="xiugai" value="修改"/>
+            </td>
+            <td>
+                <a href="admin_subjectQuery.php?del=1&cid=<?php echo $v['cid']; ?>">删除</a>
+            </td>
 
-                </tr>
-            </form>
-        <?php }
-    } ?>
+        </tr>
+    </form>
+    <tr>
+    <form action="admin_subjectQuery.php" method="post" enctype="multipart/form-data">
+        <td>
+            <img src="<?php echo str_replace('/','\\',$v['picture']);; ?>">
+
+        </td>
+
+        <td>
+            板块图片:<input type="file" name="tx"/>
+        </td>
+        <td>
+            <input type="submit" name="pic" value="tx"/><input type="hidden" name="cid" value="<?php echo $v['cid']; ?>"/>
+        </td>
+    </form>
+    </tr>
+    <?php }}?>
 
 </table>
 
