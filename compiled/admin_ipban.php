@@ -40,29 +40,31 @@
     <thead>
     <tr>
         <th>IP</th>
-        <th>封锁时间</th>
+
         <th>解封时间</th>
         <th>解封</th>
     </tr>
     </thead>
 
-
-    <form action="admin_subjectQuery.php" method="get">
+    <?php if (is_array($data)) {
+        foreach ($data AS $key => $value) { ?>
+            <form action="admin_ipQuery.php" method="get">
         <tr>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th><?php echo long2ip($value['ip']); ?></th>
+            <th><?php echo date("Y/m/d h:i:s", $value['time']); ?></th>
             <th><input type="submit" name="submit" value="解封"></th>
+            <INPUT type="HIDDEN" NAME="ip" VALUE="<?php echo $value['ip']; ?>">
         </tr>
     </form>
 
-
+        <?php }
+    } ?>
 </table>
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button type="button" id="addnew">
-    <a href="admin_banipAdd.php">添加小版块</a>
+    <a href="admin_banipAdd.php">添加封锁ip</a>
 </button>
 </body>
 </html>

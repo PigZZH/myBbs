@@ -6,6 +6,20 @@
  * Time: 17:58
  */
 include './common/common.php';
+$fip = $_SERVER["REMOTE_ADDR"];
+$rip = ip2long($fip);
+
+
+$flag = db_select($conn, 'bbs_ip', 'time', "ip=$rip");
+if (isset($flag)) {
+    $ftime = $flag[0]['time'];
+    if ($ftime > time()) {
+        echo "<script>alert('对不起您的ip已被封锁');window.location='" . $_SERVER['HTTP_REFERER'] . "';</script>";
+        die;
+    } else {
+        db_deleted($conn, 'bbs_ip', "ip=$ip");
+    }
+}
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 $sql = "select uid,allowlogin,udertype,grade,picture,lasttime,bancount from bbs_user where username = '$username' and password = '$password'";

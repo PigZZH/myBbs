@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0024)http://10.0.151.207/bbs/ -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>{$title}</title>
+    <title><?php echo $title; ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
@@ -71,72 +71,75 @@
     <div class="wp">
         <div class="hdc cl">
             <h2><a href="index.php" title="首页 - aa"><img src="./img/logo1.gif" height="80" border="0"></a></h2>
-            <!--{if isset($_SESSION['username'])}-->
-            <!--<div class="fastlg cl">
-                <div class="y pns"><a>{$_SESSION['username']}</a> | 欢迎登陆 <a href="logout.php">退出</a>
+            <?php if (isset($_SESSION['username'])) { ?>
+                <!--<div class="fastlg cl">
+                <div class="y pns"><a><?php echo $_SESSION['username']; ?></a> | 欢迎登陆 <a href="logout.php">退出</a>
                     <br>用户权限：普通用户</div>
             </div>-->
-            <div id="um">
-                <div class="avt y"><a href="home_tx.php" target="_blank"><img
-                        src="{$_SESSION['picture']}"></a></div>
-                <p>
-                    <strong class="vwmy"><a href="http://localhost/bbs/home.php"
-                                            target="_blank">{$_SESSION['username']}</a></strong>
-                    <span class="pipe">|</span><a href="home.php">设置</a>
-                    <span class="pipe">|</span><a href="logout.php">退出</a>
-                </p>
-                <p>
-                    <a id="extcreditmenu" href="http://localhost/bbs/#">金币: {$_SESSION['price']}</a>
-                    <span class="pipe">|</span>用户权限: <!--{if ($_SESSION['type'])}--><a href="admin_login.php">管理员</a>
-                    <!--{else}-->普通用户<!--{/if}-->
-                </p>
-                <iframe id="tmp_downloadhelper_iframe" style="display: none;"
-                        src="./首页 - 守望先锋_files/saved_resource.html"></iframe>
-            </div>
-            <!--{else}-->
-
-            <form method="post" autocomplete="off" id="lsform" action="login.php">
-                <div class="fastlg cl">
-                    <div class="y pns">
-                        <table cellspacing="0" cellpadding="0">
-                            <tbody>
-                            <tr>
-                                <td><span class="ftid">用户名</span></td>
-                                <td><input type="text" name="username" value="" id="ls_username" autocomplete="off"
-                                           class="px vm" tabIndex="1"></td>
-                                <td class="fastlg_l">
-                                    <label for="ls_cookietime"><input type="checkbox" name="cookietime"
-                                                                      id="ls_cookietime" class="pc"
-                                                                      value="true">自动登录</label>
-                                </td>
-                                <td>&nbsp;<a href="getpwd.php">找回密码</a></td>
-                            </tr>
-                            <tr>
-                                <td><label for="ls_password" class="z psw_w">密码</label></td>
-                                <td><input type="password" name="password" id="ls_password" class="px vm"
-                                           autocomplete="off" tabIndex="2"></td>
-                                <td class="fastlg_l">
-                                    <button type="submit" class="pn vm" name="loginsubmit" value="true"
-                                            style="width:75px;"><em>登录</em></button>
-                                </td>
-                                <td>&nbsp;<a href="reg.php" class="xi2 xw1">立即注册</a></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div id="um">
+                    <div class="avt y"><a href="home_tx.php" target="_blank"><img
+                                src="<?php echo $_SESSION['picture']; ?>"></a></div>
+                    <p>
+                        <strong class="vwmy"><a href="http://localhost/bbs/home.php"
+                                                target="_blank"><?php echo $_SESSION['username']; ?></a></strong>
+                        <span class="pipe">|</span><a href="home.php">设置</a>
+                        <span class="pipe">|</span><a href="logout.php">退出</a>
+                    </p>
+                    <p>
+                        <a id="extcreditmenu" href="http://localhost/bbs/#">金币: <?php echo $_SESSION['price']; ?></a>
+                        <span class="pipe">|</span>用户权限: <?php if (($_SESSION['type'])) { ?><a href="admin_login.php">管理员</a>
+                        <?php } else { ?>普通用户<?php } ?>
+                    </p>
+                    <iframe id="tmp_downloadhelper_iframe" style="display: none;"
+                            src="./首页 - 守望先锋_files/saved_resource.html"></iframe>
                 </div>
-            </form>
-            <!--{/if}-->
+            <?php } else { ?>
+
+                <form method="post" autocomplete="off" id="lsform" action="login.php">
+                    <div class="fastlg cl">
+                        <div class="y pns">
+                            <table cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td><span class="ftid">用户名</span></td>
+                                    <td><input type="text" name="username" value="" id="ls_username" autocomplete="off"
+                                               class="px vm" tabIndex="1"></td>
+                                    <td class="fastlg_l">
+                                        <label for="ls_cookietime"><input type="checkbox" name="cookietime"
+                                                                          id="ls_cookietime" class="pc"
+                                                                          value="true">自动登录</label>
+                                    </td>
+                                    <td>&nbsp;<a href="getpwd.php">找回密码</a></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="ls_password" class="z psw_w">密码</label></td>
+                                    <td><input type="password" name="password" id="ls_password" class="px vm"
+                                               autocomplete="off" tabIndex="2"></td>
+                                    <td class="fastlg_l">
+                                        <button type="submit" class="pn vm" name="loginsubmit" value="true"
+                                                style="width:75px;"><em>登录</em></button>
+                                    </td>
+                                    <td>&nbsp;<a href="reg.php" class="xi2 xw1">立即注册</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            <?php } ?>
 
         </div>
 
         <div id="nv">
             <ul>
                 <li id="mn_home"><a href="index.php" hidefocus="true" title="Space">首页</a></li>
-                <!--{loop $bigtabledata $key $value}-->
-                <li id="mn_home"><a href="index.php?bigid={$value['bid']}" hidefocus="true" title="Space">{$value['name']}</a>
-                </li>
-                <!--{/loop}-->
+                <?php if (is_array($bigtabledata)) {
+                    foreach ($bigtabledata AS $key => $value) { ?>
+                        <li id="mn_home"><a href="index.php?bigid=<?php echo $value['bid']; ?>" hidefocus="true"
+                                            title="Space"><?php echo $value['name']; ?></a>
+                        </li>
+                    <?php }
+                } ?>
 
 
             </ul>

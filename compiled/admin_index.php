@@ -12,13 +12,13 @@
     <script type="text/javascript">
 
         $(document).ready(
-                function () {
-                    $(".div2").click(
-                            function () {
-                                $(this).next("div").slideToggle("slow").siblings(
-                                        ".div3:visible").slideUp("slow");
-                            });
-                });
+            function () {
+                $(".div2").click(
+                    function () {
+                        $(this).next("div").slideToggle("slow").siblings(
+                            ".div3:visible").slideUp("slow");
+                    });
+            });
         function openurl(url) {
             var rframe = parent.document.getElementById("rightFrame");
             rframe.src = url;
@@ -221,7 +221,7 @@
     </div>
     <div class="fr top-link">
         <a href="admin_list.html" target="mainCont" title="DeathGhost"><i
-                class="adminIcon"></i><span>管理员：{$_SESSION['admin_username']}</span></a>
+                class="adminIcon"></i><span>管理员：<?php echo $_SESSION['admin_username']; ?></span></a>
     </div>
 </div>
 

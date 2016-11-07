@@ -39,16 +39,17 @@
 <body><br>
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <font color="#777777"><strong>添加IP：</strong></font>
-<form action="admin_classQuery.php" method="get" class="definewidth m20" enctype="multipart/form-data">
+<form action="admin_ipQuery.php" method="get" class="definewidth m20" enctype="multipart/form-data">
     <table style="margin-left:10px;margin-top:3px;">
         <tr>
-            <td>大类名称：</td>
-            <td><input type="text" name="name"/><input type="text" name="name"/><input type="text" name="name"/><input
-                    type="text" name="name"/></td>
+            <td>IP地址：</td>
+            <td><input type="text" name="name[]"/><input type="text" name="name[]"/><input type="text"
+                                                                                           name="name[]"/><input
+                    type="text" name="name[]"/></td>
         </tr>
         <tr>
-            <td>顺序排列：</td>
-            <td><input type="text" name="orderby" style="width:400px;" placeholder='请输入排列顺序'/></td>
+            <td>封禁时间(天)：</td>
+            <td><input type="text" name="time" style="width:400px;" placeholder='不输入为无限期'/></td>
             <input type="hidden" name="add" value="1"/>
         </tr>
 

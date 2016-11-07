@@ -11,4 +11,5 @@ if (!isset($_SESSION['admin_uid'])) {
     echo "<script>alert('操作非法');window.location='admin_login.php';</script>";
 
 }
+$data = db_select($conn, 'bbs_ip', '*');
 include template('admin_ipban.html');
